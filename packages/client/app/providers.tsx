@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { setup } from "../src/mud/setup";
 import { MUDProvider } from "../src/MUDContext";
 import type { SetupResult } from "../src/mud/setup";
-// import { mount as mountDevTools } from "@latticexyz/dev-tools";
+import { mount as mountDevTools } from "@latticexyz/dev-tools";
 
 export function Providers({
   children,
@@ -16,7 +16,7 @@ export function Providers({
     setup().then((result: SetupResult) => {
       console.log("setup result:", result);
       setResult(result);
-      // mountDevTools();
+      mountDevTools();
     });
   }, []);
 
