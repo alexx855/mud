@@ -1,7 +1,8 @@
+"use client"
 import { useComponentValue } from "@latticexyz/react";
-import { useMUD } from "./MUDContext";
+import { useMUD } from "../src/MUDContext";
 
-export const App = () => {
+export default function Counter() {
   const {
     components: { Counter },
     systemCalls: { increment },
@@ -13,7 +14,7 @@ export const App = () => {
   return (
     <>
       <div>
-        Counter: <span>{counter?.value ?? "??"}</span>
+        Counter: <span>{counter?.value?.toString() ?? "??"}</span>
       </div>
       <button
         type="button"
